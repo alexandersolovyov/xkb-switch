@@ -1,0 +1,25 @@
+From 9ea4dce3a18c703d06f0d9f5b4a8c7c6a2acf166 Mon Sep 17 00:00:00 2001
+From: Aleksandr Solovyov <solovyov-alexander@yandex.ru>
+Date: Tue, 27 Aug 2019 00:26:21 +0300
+Subject: [PATCH] Remove explicitly specified include folders in CMakeLists.txt
+
+---
+ CMakeLists.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a90237a..fa34ee3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -14,8 +14,6 @@ if(NOT X11_FOUND)
+ elseif(NOT X11_Xkbfile_FOUND)
+     message(FATAL_ERROR "Not found development files of 'libxkbfile' required for build. (Install libxkbfile-dev or libxkbfile-devel package.) CMake will exit.")
+ endif()
+-INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
+-LINK_DIRECTORIES(${X11_LIBRARY_DIR})
+ 
+ # Compile and link program
+ OPTION(BUILD_XKBSWITCH_LIB
+-- 
+2.13.7
+
