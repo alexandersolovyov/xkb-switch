@@ -10,7 +10,7 @@
  */
 
 #include <algorithm>
-#include "XKeyboard.h"
+#include "XKeyboard.hpp"
 
 using namespace std;
 using namespace kb;
@@ -38,7 +38,7 @@ namespace
 
                 try
                 {
-                    xkb = new XKeyboard();
+                    xkb = new XKeyboard((size_t)(-1));
                     xkb->open_display();
                 }
                 catch( ... )
